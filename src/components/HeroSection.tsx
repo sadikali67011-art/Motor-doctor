@@ -169,7 +169,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenUpload, onOpenAd
             </div>
 
             <a
-              href="https://www.linkedin.com/in/sadikali"
+              href="https://www.linkedin.com/in/sadik-ali-75a393294"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 bg-[#0077B5] hover:bg-[#006097] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-xs transition-transform hover:scale-105"
@@ -238,7 +238,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenUpload, onOpenAd
               </Button>
 
               <a
-                href="https://wa.me/919819912166?text=Hi%20MotorDoctor,%20I%20am%20at%20the%20service%20center%20and%20need%20urgent%20review%20of%20my%20car%20estimate"
+                href="https://wa.me/917534894896?text=Hi%20MotorDoctor,%20I%20am%20at%20the%20service%20center%20and%20need%20urgent%20review%20of%20my%20car%20estimate"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
@@ -423,7 +423,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenUpload, onOpenAd
                               type="tel"
                               value={regPhone}
                               onChange={(e) => setRegPhone(e.target.value)}
-                              placeholder="e.g. 9819912166"
+                              placeholder="e.g. 7534894896"
                               className="h-10 text-xs mt-0.5"
                             />
                           </div>
@@ -509,7 +509,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenUpload, onOpenAd
                             required
                             value={loginPhone}
                             onChange={(e) => setLoginPhone(e.target.value)}
-                            placeholder="e.g. 9819912166 or email"
+                            placeholder="e.g. 7534894896 or email"
                             className="h-10 text-xs mt-0.5"
                           />
                         </div>

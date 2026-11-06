@@ -166,7 +166,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   required
                   value={loginIdentifier}
                   onChange={(e) => setLoginIdentifier(e.target.value)}
-                  placeholder="e.g. 9819912166 or rahul@gmail.com"
+                  placeholder="e.g. 7534894896 or rahul@gmail.com"
                   className="mt-1"
                 />
               </div>
@@ -252,7 +252,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                     type="tel"
                     value={regPhone}
                     onChange={(e) => setRegPhone(e.target.value)}
-                    placeholder="e.g. 9819912166"
+                    placeholder="e.g. 7534894896"
                     className="mt-1"
                   />
                 </div>

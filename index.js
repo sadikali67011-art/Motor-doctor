@@ -50,7 +50,7 @@ const defaultUsers = [
     id: "usr_admin",
     fullName: "Admin Officer",
     email: "admin@motordoctor.in",
-    phoneNumber: "9819912166",
+    phoneNumber: "7534894896",
     password: "admin", // simple demo password
     city: "Mumbai",
     role: "admin",
@@ -125,7 +125,7 @@ let auditTickets = readJSON(TICKETS_FILE, [
   {
     id: "MD-98214",
     fullName: "Vikas Malhotra",
-    phoneNumber: "9819912166",
+    phoneNumber: "7534894896",
     carBrand: "Hyundai",
     carModel: "Creta 1.5 CRDi",
     carFuelType: "Diesel",

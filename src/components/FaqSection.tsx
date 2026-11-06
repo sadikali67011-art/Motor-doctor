@@ -53,14 +53,14 @@ export const FaqSection: React.FC = () => {
             <p className="text-xs text-slate-500 mt-0.5">Call or WhatsApp our team directly. We are here to help!</p>
           </div>
           <div className="flex items-center gap-3 w-full sm:w-auto">
-            <a href="tel:+919819912166" className="w-full sm:w-auto">
+            <a href="tel:+917534894896" className="w-full sm:w-auto">
               <Button variant="outline" size="sm" className="w-full sm:w-auto text-xs gap-1.5">
                 <PhoneCall className="w-3.5 h-3.5 text-blue-600" />
-                <span>+91 98199 12166</span>
+                <span>+91 75348 94896</span>
               </Button>
             </a>
             <a 
-              href="https://wa.me/919819912166?text=Hi%20MotorDoctor,%20I%20have%20a%20question%20about%20my%20car%20service." 
+              href="https://wa.me/917534894896?text=Hi%20MotorDoctor,%20I%20have%20a%20question%20about%20my%20car%20service." 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full sm:w-auto"

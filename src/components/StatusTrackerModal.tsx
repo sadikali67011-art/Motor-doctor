@@ -134,7 +134,7 @@ export const StatusTrackerModal: React.FC<StatusTrackerModalProps> = ({ isOpen, 
             </div>
 
             <a
-              href={`https://wa.me/919819912166?text=Hi%20MotorDoctor,%20checking%20status%20for%20Ticket%20${result.id}`}
+              href={`https://wa.me/917534894896?text=Hi%20MotorDoctor,%20checking%20status%20for%20Ticket%20${result.id}`}
               target="_blank"
               rel="noopener noreferrer"
               className="block pt-2"

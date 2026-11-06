@@ -46,11 +46,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
           <div className="flex items-center gap-4 text-[11px] text-slate-300">
             <a 
-              href="tel:+919819912166" 
+              href="tel:+917534894896" 
               className="flex items-center gap-1.5 hover:text-white transition-colors font-semibold"
             >
               <PhoneCall className="w-3.5 h-3.5 text-blue-400" />
-              <span>+91 98199 12166</span>
+              <span>+91 75348 94896</span>
             </a>
             <span className="hidden sm:inline text-slate-500">•</span>
             <button
@@ -147,7 +147,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           )}
 
           <a
-            href="https://wa.me/919819912166?text=Hi%20MotorDoctor,%20I%20am%20at%20the%20service%20center%20and%20need%20urgent%20review%20of%20my%20car%20estimate"
+            href="https://wa.me/917534894896?text=Hi%20MotorDoctor,%20I%20am%20at%20the%20service%20center%20and%20need%20urgent%20review%20of%20my%20car%20estimate"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -298,14 +298,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             </Button>
 
             <a
-              href="https://wa.me/919819912166?text=Hi%20MotorDoctor,%20I%20am%20at%20the%20service%20center%20and%20need%20urgent%20review%20of%20my%20car%20estimate"
+              href="https://wa.me/917534894896?text=Hi%20MotorDoctor,%20I%20am%20at%20the%20service%20center%20and%20need%20urgent%20review%20of%20my%20car%20estimate"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full"
             >
               <Button variant="whatsapp" className="w-full gap-2 text-xs">
                 <MessageSquare className="w-4 h-4 fill-white" />
-                <span>Instant WhatsApp Review (+91 98199 12166)</span>
+                <span>Instant WhatsApp Review (+91 75348 94896)</span>
               </Button>
             </a>
 

@@ -412,7 +412,7 @@ export const BillUploadModal: React.FC<BillUploadModalProps> = ({
                     type="tel"
                     value={formData.phoneNumber}
                     onChange={(e) => setFormData(p => ({ ...p, phoneNumber: e.target.value }))}
-                    placeholder="e.g. 9819912166"
+                    placeholder="e.g. 7534894896"
                     className="mt-1"
                   />
                 </div>
@@ -496,14 +496,14 @@ export const BillUploadModal: React.FC<BillUploadModalProps> = ({
               {/* Instant WhatsApp Connect Button */}
               <div className="space-y-2.5 pt-2">
                 <a
-                  href={`https://wa.me/919819912166?text=Hi%20MotorDoctor,%20I%20just%20submitted%20Audit%20Ticket%20%23${ticketId}%20for%20my%20${encodeURIComponent(formData.carBrand)}%20${encodeURIComponent(formData.carModel)}%20(Quoted%20Amount:%20${formData.estimatedQuotation}).%20Please%20review.`}
+                  href={`https://wa.me/917534894896?text=Hi%20MotorDoctor,%20I%20just%20submitted%20Audit%20Ticket%20%23${ticketId}%20for%20my%20${encodeURIComponent(formData.carBrand)}%20${encodeURIComponent(formData.carModel)}%20(Quoted%20Amount:%20${formData.estimatedQuotation}).%20Please%20review.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
                 >
                   <Button variant="whatsapp" className="w-full h-12 text-sm font-bold rounded-xl gap-2">
                     <MessageSquare className="w-4 h-4 fill-white" />
-                    <span>Send Bill Direct on WhatsApp (+91 98199 12166)</span>
+                    <span>Send Bill Direct on WhatsApp (+91 75348 94896)</span>
                   </Button>
                 </a>
 

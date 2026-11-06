@@ -124,7 +124,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
                   </Button>
 
                   <a
-                    href={`https://wa.me/919819912166?text=Hi%20MotorDoctor,%20I%20want%20to%20book%20the%20${encodeURIComponent(plan.name)}%20plan%20(${formatINR(plan.price)}).`}
+                    href={`https://wa.me/917534894896?text=Hi%20MotorDoctor,%20I%20want%20to%20book%20the%20${encodeURIComponent(plan.name)}%20plan%20(${formatINR(plan.price)}).`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"

@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpload, onOpenTrack }) => 
                   <div className="text-xs font-bold text-white">Sadik Ali</div>
                 </div>
                 <a
-                  href="https://www.linkedin.com/in/sadikali"
+                  href="https://www.linkedin.com/in/sadik-ali-75a393294"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 bg-[#0077B5] hover:bg-[#006097] text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm transition-all"
@@ -88,14 +88,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpload, onOpenTrack }) => 
             <h4 className="text-sm font-bold text-white uppercase tracking-wider">Get in Touch</h4>
             <ul className="space-y-3 text-xs text-slate-400">
               <li>
-                <a href="tel:+919819912166" className="flex items-center gap-2 hover:text-white transition-colors">
+                <a href="tel:+917534894896" className="flex items-center gap-2 hover:text-white transition-colors">
                   <PhoneCall className="w-4 h-4 text-blue-400 shrink-0" />
-                  <span>+91 98199 12166</span>
+                  <span>+91 75348 94896</span>
                 </a>
               </li>
               <li>
                 <a 
-                  href="https://wa.me/919819912166?text=Hi%20MotorDoctor,%20I%20need%20assistance%20with%20my%20car%20service%20bill." 
+                  href="https://wa.me/917534894896?text=Hi%20MotorDoctor,%20I%20need%20assistance%20with%20my%20car%20service%20bill." 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-white transition-colors"
@@ -106,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpload, onOpenTrack }) => 
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/sadikali"
+                  href="https://www.linkedin.com/in/sadik-ali-75a393294"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-blue-400 transition-colors"

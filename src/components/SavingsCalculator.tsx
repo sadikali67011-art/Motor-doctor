@@ -274,7 +274,7 @@ export const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({ onOpenUplo
               </Button>
 
               <a
-                href={`https://wa.me/919819912166?text=Hi%20MotorDoctor,%20I%20used%20the%20savings%20calculator%20and%20quoted%20estimate%20is%20${totalQuotedBill}.%20Please%20help%20me%20verify%20my%20bill.`}
+                href={`https://wa.me/917534894896?text=Hi%20MotorDoctor,%20I%20used%20the%20savings%20calculator%20and%20quoted%20estimate%20is%20${totalQuotedBill}.%20Please%20help%20me%20verify%20my%20bill.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"

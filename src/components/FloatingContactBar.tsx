@@ -12,7 +12,7 @@ export const FloatingContactBar: React.FC<FloatingContactBarProps> = ({ onOpenUp
       {/* Desktop Floating WhatsApp Button (Bottom-Right) */}
       <div className="fixed bottom-6 right-6 z-40 hidden sm:flex flex-col items-end gap-3">
         <a
-          href="https://wa.me/919819912166?text=Hi%20MotorDoctor,%20I%20am%20at%20the%20service%20center%20and%20need%20urgent%20review%20of%20my%20car%20estimate."
+          href="https://wa.me/917534894896?text=Hi%20MotorDoctor,%20I%20am%20at%20the%20service%20center%20and%20need%20urgent%20review%20of%20my%20car%20estimate."
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-2xl hover:bg-[#20ba59] transition-all hover:scale-105"
@@ -28,7 +28,7 @@ export const FloatingContactBar: React.FC<FloatingContactBarProps> = ({ onOpenUp
       {/* Mobile Sticky Bottom Floating Action Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 sm:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 shadow-2xl flex items-center gap-2">
         <a
-          href="tel:+919819912166"
+          href="tel:+917534894896"
           className="flex-1"
         >
           <Button
@@ -42,7 +42,7 @@ export const FloatingContactBar: React.FC<FloatingContactBarProps> = ({ onOpenUp
         </a>
 
         <a
-          href="https://wa.me/919819912166?text=Hi%20MotorDoctor,%20I%20am%20at%20the%20service%20center%20and%20need%20urgent%20review%20of%20my%20car%20estimate."
+          href="https://wa.me/917534894896?text=Hi%20MotorDoctor,%20I%20am%20at%20the%20service%20center%20and%20need%20urgent%20review%20of%20my%20car%20estimate."
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1"

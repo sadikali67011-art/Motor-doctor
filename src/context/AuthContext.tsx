@@ -74,7 +74,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           id: "usr_admin",
           fullName: "Admin Officer",
           email: "admin@motordoctor.in",
-          phoneNumber: "9819912166",
+          phoneNumber: "7534894896",
           city: "Mumbai",
           role: "admin"
         };
