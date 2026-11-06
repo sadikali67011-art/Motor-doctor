@@ -131,3 +131,4 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenUp
     </section>
   );
 };
+

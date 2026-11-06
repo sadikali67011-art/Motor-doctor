@@ -122,3 +122,4 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpload, onOpenTrack }) => 
     </footer>
   );
 };
+

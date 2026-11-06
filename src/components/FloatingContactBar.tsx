@@ -69,3 +69,4 @@ export const FloatingContactBar: React.FC<FloatingContactBarProps> = ({ onOpenUp
     </>
   );
 };
+

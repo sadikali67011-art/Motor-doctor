@@ -266,3 +266,4 @@ export const FAQS = [
     answer: "You can upload it directly through the upload button on this page, or click our WhatsApp button to send high-res photos or PDF of your estimate directly to our official line (+91 98199 12166)."
   }
 ];
+

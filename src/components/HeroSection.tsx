@@ -257,3 +257,4 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenUpload }) => {
     </section>
   );
 };
+

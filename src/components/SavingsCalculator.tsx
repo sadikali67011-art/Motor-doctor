@@ -296,3 +296,4 @@ export const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({ onOpenUplo
     </section>
   );
 };
+

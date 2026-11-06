@@ -124,3 +124,4 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onOpenUplo
     </section>
   );
 };
+

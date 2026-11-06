@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
@@ -12,14 +12,28 @@ import { Footer } from "@/components/Footer";
 import { FloatingContactBar } from "@/components/FloatingContactBar";
 import { BillUploadModal } from "@/components/BillUploadModal";
 import { StatusTrackerModal } from "@/components/StatusTrackerModal";
+import { AuthModal } from "@/components/AuthModal";
+import { AdminTrackerModal } from "@/components/AdminTrackerModal";
+import { AuthProvider, useAuth } from "@/context/AuthContext";
+import { sendVisitorPing } from "@/services/visitorTracking";
 import { Toaster } from "sonner";
 
-export function App() {
+function MainContent() {
+  const { user } = useAuth();
   const [uploadModalOpen, setUploadModalOpen] = useState(false);
   const [trackerModalOpen, setTrackerModalOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authDefaultTab, setAuthDefaultTab] = useState<"login" | "register">("login");
+  const [adminTrackerOpen, setAdminTrackerOpen] = useState(false);
+
   const [activeBrand, setActiveBrand] = useState<string>("Hyundai");
   const [activeAmount, setActiveAmount] = useState<number>(18500);
   const [activePlanId, setActivePlanId] = useState<string>("quick-review");
+
+  // Automatically track every visitor's location when page loads
+  useEffect(() => {
+    sendVisitorPing(user ? `${user.fullName} (${user.phoneNumber})` : "Guest Visitor");
+  }, [user]);
 
   const handleOpenUpload = (brand?: string, amount?: number, planId?: string) => {
     if (brand) setActiveBrand(brand);
@@ -33,14 +47,21 @@ export function App() {
     setUploadModalOpen(true);
   };
 
+  const handleOpenAuth = (tab: "login" | "register" = "login") => {
+    setAuthDefaultTab(tab);
+    setAuthModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans text-slate-900 pb-16 sm:pb-0">
       <Toaster position="top-center" richColors />
       
-      {/* Top sticky navbar */}
+      {/* Top sticky navbar with Auth & Tracker triggers */}
       <Navbar
         onOpenUpload={() => handleOpenUpload()}
         onOpenTrack={() => setTrackerModalOpen(true)}
+        onOpenAuth={handleOpenAuth}
+        onOpenAdminTracker={() => setAdminTrackerOpen(true)}
       />
 
       <main className="flex-1">
@@ -96,7 +117,7 @@ export function App() {
       <BillUploadModal
         isOpen={uploadModalOpen}
         onClose={() => setUploadModalOpen(false)}
-        initialBrand={activeBrand}
+        initialBrand={user?.carBrand || activeBrand}
         initialAmount={activeAmount}
         initialPlanId={activePlanId}
       />
@@ -106,7 +127,28 @@ export function App() {
         isOpen={trackerModalOpen}
         onClose={() => setTrackerModalOpen(false)}
       />
+
+      {/* Auth Modal (Login & Register with Location Auto-Detect) */}
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        defaultTab={authDefaultTab}
+      />
+
+      {/* Admin Real-Time Visitor & Location Tracker */}
+      <AdminTrackerModal
+        isOpen={adminTrackerOpen}
+        onClose={() => setAdminTrackerOpen(false)}
+      />
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <AuthProvider>
+      <MainContent />
+    </AuthProvider>
   );
 }
 

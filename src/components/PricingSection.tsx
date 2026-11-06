@@ -159,3 +159,4 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
     </section>
   );
 };
+

@@ -79,3 +79,4 @@ export const MechanicsTeamSection: React.FC = () => {
     </section>
   );
 };
+

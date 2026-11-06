@@ -126,3 +126,4 @@ export const CommonScamsSection: React.FC<CommonScamsSectionProps> = ({ onOpenUp
     </section>
   );
 };
+

@@ -74,3 +74,4 @@ export interface ConsultationRequest {
   status?: 'SUBMITTED' | 'UNDER_REVIEW' | 'COMPLETED';
   createdAt?: string;
 }
+
