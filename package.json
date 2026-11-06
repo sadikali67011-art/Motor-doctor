@@ -9,8 +9,11 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "node index.js",
-    "start": "node index.js"
+    "server": "node backend/server.js",
+    "start": "node backend/server.js",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build:frontend": "cd frontend && npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

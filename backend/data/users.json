@@ -1,0 +1,48 @@
+[
+  {
+    "id": "usr_1793985870757",
+    "fullName": "sadik ali",
+    "email": "",
+    "phoneNumber": "901290441",
+    "password": "Sadik@901290",
+    "city": "Moradabad",
+    "carBrand": "Hyundai",
+    "carModel": "Car",
+    "role": "user",
+    "createdAt": "2026-11-06T17:24:30.757Z"
+  },
+  {
+    "id": "usr_1793984647053",
+    "fullName": "Pooja Sharma",
+    "email": "",
+    "phoneNumber": "9988776655",
+    "password": "secretpassword",
+    "city": "Pune",
+    "carBrand": "Tata",
+    "carModel": "Nexon",
+    "role": "user",
+    "createdAt": "2026-11-06T17:04:07.053Z"
+  },
+  {
+    "id": "usr_admin",
+    "fullName": "Admin Officer",
+    "email": "admin@motordoctor.in",
+    "phoneNumber": "7534894896",
+    "password": "admin",
+    "city": "Mumbai",
+    "role": "admin",
+    "createdAt": "2026-11-06T17:01:07.829Z"
+  },
+  {
+    "id": "usr_demo",
+    "fullName": "Rahul Sharma",
+    "email": "rahul@gmail.com",
+    "phoneNumber": "9876543210",
+    "password": "password123",
+    "city": "Delhi NCR",
+    "role": "user",
+    "carBrand": "Hyundai",
+    "carModel": "Creta",
+    "createdAt": "2026-11-06T17:01:07.831Z"
+  }
+]
