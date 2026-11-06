@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrench, Stethoscope, PhoneCall, Mail, MapPin, MessageSquare, ShieldCheck, Heart } from "lucide-react";
+import { Wrench, Stethoscope, PhoneCall, Mail, MapPin, MessageSquare, ShieldCheck, Linkedin, Heart } from "lucide-react";
 
 interface FooterProps {
   onOpenUpload: (planId?: string) => void;
@@ -29,7 +29,26 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpload, onOpenTrack }) => 
               India's first independent automobile service bill review platform. We empower car owners to avoid bogus add-ons, inflated labor, and fake repairs by connecting them directly with veteran master mechanics.
             </p>
 
-            <div className="pt-2 flex flex-wrap gap-3 text-xs">
+            {/* Founder and LinkedIn badge */}
+            <div className="pt-2">
+              <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between gap-3 max-w-sm">
+                <div>
+                  <div className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Project Founder</div>
+                  <div className="text-xs font-bold text-white">Sadik Ali</div>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/sadikali"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 bg-[#0077B5] hover:bg-[#006097] text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm transition-all"
+                >
+                  <Linkedin className="w-3.5 h-3.5 fill-white" />
+                  <span>Connect on LinkedIn</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="pt-1 flex flex-wrap gap-3 text-xs">
               <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
                 <ShieldCheck className="w-4 h-4" /> 100% Unbiased Advice
               </span>
@@ -85,6 +104,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpload, onOpenTrack }) => 
                   <span>WhatsApp Support</span>
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/sadikali"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+                >
+                  <Linkedin className="w-4 h-4 text-[#0077B5] shrink-0" />
+                  <span>Sadik Ali (LinkedIn)</span>
+                </a>
+              </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-slate-400 shrink-0" />
                 <span>support@motordoctor.in</span>
@@ -106,7 +136,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpload, onOpenTrack }) => 
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-900 text-[11px]">
             <div>
-              &copy; {new Date().getFullYear()} Motor Doctor (India). All rights reserved.
+              &copy; {new Date().getFullYear()} Motor Doctor (India). Founded by Sadik Ali. All rights reserved.
             </div>
             <div className="flex items-center gap-4">
               <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
@@ -122,4 +152,3 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpload, onOpenTrack }) => 
     </footer>
   );
 };
-

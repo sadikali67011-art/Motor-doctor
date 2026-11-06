@@ -1,10 +1,12 @@
 export interface VisitorLocation {
-  city?: string;
-  region?: string;
-  country?: string;
-  latitude?: number | null;
-  longitude?: number | null;
-  accuracy?: number;
+  city: string;
+  region: string;
+  country: string;
+  latitude: number | null;
+  longitude: number | null;
+  accuracy?: number | null;
+  address?: string;
+  ip?: string;
 }
 
 export function detectDeviceInfo() {
@@ -29,66 +31,104 @@ export function detectDeviceInfo() {
   return { device, browser, os };
 }
 
-// Function to get high-accuracy GPS coordinates or IP fallback
-export async function getVisitorLocation(): Promise<VisitorLocation> {
+// Live GPS Coordinates with Reverse Geocoding
+export async function getLiveGPSLocation(): Promise<VisitorLocation> {
   return new Promise((resolve) => {
-    // Try browser HTML5 geolocation first
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          resolve({
-            latitude: pos.coords.latitude,
-            longitude: pos.coords.longitude,
-            accuracy: pos.coords.accuracy,
-            city: "GPS Detected",
-            region: "India",
-            country: "India"
-          });
-        },
-        async () => {
-          // If user denies or error, fallback to IP geo service
+        async (position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          const accuracy = Math.round(position.coords.accuracy);
+
+          // Try reverse geocoding via OpenStreetMap Nominatim (Free, no API key needed)
+          let city = "Detected Location";
+          let region = "India";
+          let address = `${lat.toFixed(4)}, ${lon.toFixed(4)}`;
+
           try {
-            const res = await fetch("https://ipapi.co/json/", { signal: AbortSignal.timeout(3000) });
-            if (res.ok) {
-              const data = await res.json();
-              return resolve({
-                city: data.city || "Mumbai",
-                region: data.region || "Maharashtra",
-                country: data.country_name || "India",
-                latitude: data.latitude || 19.076,
-                longitude: data.longitude || 72.877
-              });
+            const geoRes = await fetch(
+              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=14&addressdetails=1`,
+              { signal: AbortSignal.timeout(3500) }
+            );
+            if (geoRes.ok) {
+              const geoData = await geoRes.json();
+              city =
+                geoData.address.city ||
+                geoData.address.town ||
+                geoData.address.suburb ||
+                geoData.address.county ||
+                "Live Location";
+              region = geoData.address.state || "India";
+              address = geoData.display_name?.split(",").slice(0, 3).join(",") || address;
             }
           } catch {
-            // Default Indian metropolitan center
-            resolve({
-              city: "Delhi NCR",
-              region: "Delhi",
-              country: "India",
-              latitude: 28.6139,
-              longitude: 77.209
-            });
+            // Reverse geocode fallback
           }
+
+          resolve({
+            latitude: lat,
+            longitude: lon,
+            accuracy,
+            city,
+            region,
+            country: "India",
+            address
+          });
         },
-        { timeout: 4000, enableHighAccuracy: true }
+        async (err) => {
+          console.warn("GPS Geolocation error or denied:", err.message);
+          // Fallback to IP geolocation
+          const ipLoc = await getIPLocationFallback();
+          resolve(ipLoc);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 7000,
+          maximumAge: 10000
+        }
       );
     } else {
-      resolve({
-        city: "Mumbai",
-        region: "Maharashtra",
-        country: "India",
-        latitude: 19.076,
-        longitude: 72.877
-      });
+      getIPLocationFallback().then(resolve);
     }
   });
 }
 
-// Track visit and send to backend
+// IP-based Geolocation Fallback
+async function getIPLocationFallback(): Promise<VisitorLocation> {
+  try {
+    const res = await fetch("https://ipapi.co/json/", { signal: AbortSignal.timeout(3500) });
+    if (res.ok) {
+      const data = await res.json();
+      return {
+        city: data.city || "Mumbai",
+        region: data.region || "Maharashtra",
+        country: data.country_name || "India",
+        latitude: data.latitude || 19.076,
+        longitude: data.longitude || 72.8777,
+        ip: data.ip,
+        address: `${data.city || "Mumbai"}, ${data.region || "Maharashtra"}`
+      };
+    }
+  } catch (e) {
+    // offline default
+  }
+
+  return {
+    city: "Delhi NCR",
+    region: "Delhi",
+    country: "India",
+    latitude: 28.6139,
+    longitude: 77.209,
+    address: "Delhi NCR, India"
+  };
+}
+
+// Send live visitor ping with exact GPS coordinates to backend
 export async function sendVisitorPing(userIdentifier?: string) {
   try {
     const { device, browser, os } = detectDeviceInfo();
-    const location = await getVisitorLocation();
+    const location = await getLiveGPSLocation();
 
     await fetch("http://localhost:5000/api/track-visitor", {
       method: "POST",
@@ -104,7 +144,12 @@ export async function sendVisitorPing(userIdentifier?: string) {
         screenHeight: window.innerHeight
       })
     });
+
+    return location;
   } catch (err) {
     console.warn("Visitor ping skipped (offline/local):", err);
+    return null;
   }
 }
+
+export const getVisitorLocation = getLiveGPSLocation;
